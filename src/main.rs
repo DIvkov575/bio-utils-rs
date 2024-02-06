@@ -151,6 +151,31 @@ lazy_static!(
     ]);
 );
 
+// def dna_to_pre_rna(dna_string: str) -> str:
+// return dna_string.translate(dna_rna_nucleotides).__reversed__()
+//
+//
+// def rna_to_AA(rna_string: str) -> list(str):
+// pp_chain = []
+// buf = ""
+// for char in rna_string:
+// buf += char
+// if len(buf) == 3:
+// pp_chain.append(buf.lower())
+// buf = ""
+// if len(buf) != 0:
+// raise Exception("rna_string #nucleotides is not a multiple of 3")
+//
+// return pp_chain.__reversed__()
+
+
+fn dna_to_pre_rna(dna_str: &str) -> String {
+    dna_str.chars().par_iter()
+}
+
+
+
+
 
 // rna_to_AA = {
 fn main() -> Result<()>{

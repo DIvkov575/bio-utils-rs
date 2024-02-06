@@ -9,3 +9,4 @@ edition = "2021"
 anyhow = "1.0.79"
 fnv = { version = "1.0.7", features = [] }
 lazy_static = { version = "1.4.0", features = [] }
+rayon = "1.8.1"
