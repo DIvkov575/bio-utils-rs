@@ -6,7 +6,7 @@ use lazy_static::lazy_static;
 type HashMapFnv<K, V> = HashMap<K, V, BuildHasherDefault<FnvHasher>>;
 
 lazy_static!(
-    static ref dna_rna_nucleotide_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
+    pub static ref dna_rna_nucleotide_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
          ("T".to_string(), "A".to_string()),
          ("A".to_string(), "U".to_string()),
          ("C".to_string(), "G".to_string()),
@@ -17,7 +17,7 @@ lazy_static!(
          ("g".to_string(), "c".to_string()),
     ]);
 
-    static ref rna_aa_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
+    pub static ref rna_aa_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
         ("UUU".into(), "Phe".into()),
         ("UUC".into(), "Phe".into()),
         ("UUA".into(), "Leu".into()),
