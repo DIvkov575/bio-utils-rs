@@ -23,20 +23,28 @@ use rayon::prelude::*;
 
 
 fn main() -> Result<()> {
-    let mut a = "atgcatatgc".to_string();
-    let slices = get_slices(&mut a, 3);
+    let mut dna = "atgcatatgac".to_string();
 
-    let mut output_buf = "".to_string();
-    for slice in slices { output_buf += &replace(slice); }
+    let mut rna = "".to_string();
+    for slice in get_slices(&mut dna, 3) { rna += &dna_to_rna(slice); }
 
-    print!("{:?}", output_buf);
+    rna_to_aa(&mut rna);
 
 
     Ok(())
 }
 
 
-fn replace(slice: &mut str) -> String {
+fn rna_to_aa(slice: &mut str) -> Vec<String> {
+    let mut aa: Vec<String> = Vec::with_capacity(slice.len()/3 + 1);
+    for i in (0..(slice.len()-2)).step_by(3) {
+        aa.push(rna_aa_pairs.get(&slice[i..=i+2]).unwrap().clone());
+    }
+    return aa
+}
+
+
+fn dna_to_rna(slice: &mut str) -> String {
     slice
         .chars()
         .map(|char|
@@ -47,7 +55,6 @@ fn replace(slice: &mut str) -> String {
                 .collect::<Vec<_>>()[0])
         .collect()
 }
-
 
 
 fn get_slices(input: &mut str, n: usize) -> Vec<&mut str> {

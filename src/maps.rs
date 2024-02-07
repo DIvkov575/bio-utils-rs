@@ -17,6 +17,7 @@ lazy_static!(
          ("g".to_string(), "c".to_string()),
     ]);
 
+    // pub static ref rna_aa_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
     pub static ref rna_aa_pairs: HashMapFnv<String, String> = HashMapFnv::from_iter([
         ("UUU".into(), "Phe".into()),
         ("UUC".into(), "Phe".into()),
@@ -52,8 +53,8 @@ lazy_static!(
         ("GCG".into(), "Ala".into()),
         ("UAU".into(), "Tyr".into()),
         ("UAC".into(), "Tyr".into()),
-        ("UAA".into(), "Stop.into()"),  //stop
-        ("UAG".into(), "Stop.into()"),  // stop
+        ("UAA".into(), "Stop".into()),  //stop
+        ("UAG".into(), "Stop".into()),  // stop
         ("CAU".into(), "His".into()),
         ("CAC".into(), "His".into()),
         ("CAA".into(), "Gln".into()),
@@ -68,7 +69,7 @@ lazy_static!(
         ("GAG".into(), "Glu".into()),
         ("UGU".into(), "Cys".into()),
         ("UGC".into(), "Cys".into()),
-        ("UGA".into(), "Stop.into()"), // stop
+        ("UGA".into(), "Stop".into()), // stop
         ("UGG".into(), "Trp".into()),
         ("CGU".into(), "Arg".into()),
         ("CGC".into(), "Arg".into()),
@@ -116,8 +117,8 @@ lazy_static!(
         ("gcg".into(), "Ala".into()),
         ("uau".into(), "Tyr".into()),
         ("uac".into(), "Tyr".into()),
-        ("uaa".into(), "Stop.into()"),  // stop
-        ("uag".into(), "Stop.into()"),  // stop
+        ("uaa".into(), "Stop".into()),  // stop
+        ("uag".into(), "Stop".into()),  // stop
         ("cau".into(), "His".into()),
         ("cac".into(), "His".into()),
         ("caa".into(), "Gln".into()),
@@ -132,7 +133,7 @@ lazy_static!(
         ("gag".into(), "Glu".into()),
         ("ugu".into(), "Cys".into()),
         ("ugc".into(), "Cys".into()),
-        ("uga".into(), "Stop.into()"),  // stop
+        ("uga".into(), "Stop".into()),  // stop
         ("ugg".into(), "Trp".into()),
         ("cgu".into(), "Arg".into()),
         ("cgc".into(), "Arg".into()),
