@@ -9,14 +9,20 @@ use rayon::prelude::*;
 
 
 fn main() -> Result<()> {
-    // let mut dna = " U U U G U G G U U U U U G C G G U G C C G C U G G U U U C C U U U ".to_string();
-    let mut dna = " T A C T T G C T T C A C C T C G C G C C G T T A T T G C G T C C G ".to_string();
-    dna = dna.replace(" ", "");
+    let mut rnas = vec![
+        "U U G U U C G U U G U G G U G C G C G G C U U U U U C G C U G G C".to_string().replace(" ", ""),
+        "U U U G U G G U U U U U G C G G U G C C G C U G G U U U C C U U U ".to_string().replace(" ", ""),
+        "G C U G U U U G G U U C C G C U U C G C C U G U G C G U G G U U C ".to_string().replace(" ", ""),
+        "G U C G U U G U U U G C G U G C G U U C U G U G U G G G U U U G U".to_string().replace(" ", ""),
+    ];
+    for rna in &mut rnas {
+        let mut aa = rna_to_aa(rna);
+        for a in aa {
+            print!("{}, ", a)
+        }
+        println!("");
 
-    let mut slices = get_slices(&mut dna, 3).iter().map(|x| x.to_string()).collect();
-    let rna = dna_to_rna(slices);
-
-    // rna_to_aa(&mut rna);
+    }
 
 
     Ok(())
