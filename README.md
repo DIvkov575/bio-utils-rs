@@ -7,7 +7,7 @@ I experimented w/ concurrency (multiple mutable refrences to non-overlapping sli
 maps.rs
  - contains mapping between dna and rna nucleotides
  - contains mapping between rna codons and amino acids
- main.rs
+main.rs
  - contains spliter function
  - dna to rna
  - rna to amino acids
