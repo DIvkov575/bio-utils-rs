@@ -1,0 +1,4 @@
+bunch of simple utils for doing bio hw
+I experimented w/ concurrency (multiple mutable refrences to non-overlapping slices of original string ->  each is processed concurrently)
+- converting dna to rna (string)
+- converting rna codons to amino acids (string)
