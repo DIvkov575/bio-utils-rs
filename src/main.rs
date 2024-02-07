@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     println!("{}", rna);
     let aa = rna_to_aa(&mut rna);
     println!("{}", rna);
-    for a in aa { println!("{}, " a)}
+    for a in aa { print!("{}, ", a)}
 
 
 
